@@ -19,8 +19,27 @@
       <script>
         'use strict';
         const urli = 'https://85.156.38.211:42613';
-        let left = ;
-        /home/ubuntu/häät/skripti.js
+        let left = 3;
+                let running = true;
+        const counter = window.document.getElementById('laskuri');
+
+        const sleep = ms => new Promise(r => setTimeout(r, ms));
+        const drawCounter = count => counter.textContent = running ? count + " ▶️": count + " ⏸";
+        counter.addEventListener("click", () => {
+          running = running ? false : true;
+          drawCounter(secsLeft);
+        });
+
+        window.onload = async () => {
+          while (true) {
+            if (secsLeft > 0 && running)
+              drawCounter(--secsLeft);
+            if (secsLeft == 0)
+              window.location.href = urli;
+
+            await sleep(1 * 1000);
+          }
+        }
       </script>
     </body>
   </html>
