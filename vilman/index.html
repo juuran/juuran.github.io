@@ -63,7 +63,9 @@
         counter.addEventListener("click", toggleOnOff);
         
         document.addEventListener("keypress", e => {
-          document.getElementById("laskuri").parentElement.appendChild(new textContent((e.key.toString));
+          let texti = document.createElement("header");
+          texti.textContent = "e.key: " + e.key.toString;
+          document.parentElement.appendChild(texti));
           if (e.key === " ") {
             toggleOnOff;
           };
