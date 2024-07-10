@@ -49,7 +49,7 @@
       <script>
         'use strict';
         const urli = 'https://85.156.34.242:42615';
-        let secsLeft = 10;
+        let secsLeft = 4;
                 let running = true;
         const counter = window.document.getElementById('laskuri');
 
@@ -64,7 +64,7 @@
         
         document.addEventListener("keydown", event => {
           if (event.code === "Space")
-            toggleOnOff;
+            toggleOnOff();
         });
 
         window.onload = async () => {
