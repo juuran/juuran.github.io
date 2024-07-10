@@ -28,6 +28,7 @@
         counter.addEventListener("click", toggleOnOff);
         
         document.addEventListener("keypress", e => {
+          console.log(e.key);
           if (e.key === " ") {
             toggleOnOff;
           };
