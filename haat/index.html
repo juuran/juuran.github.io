@@ -44,13 +44,40 @@
     </head>
     <body>
       <br><br><br><br><br>
-      <h1>Siirrytään <a href='http://85.156.34.242:57820' target='_self'><strong>👰*Hääkuviin*🤵...</strong></a><strong></strong></h1>
+      <h1>Siirrytään <a href='http://85.156.34.242:57820' target='_self'><strong>👰*Hääkuviin*🤵!</strong></a><strong></strong></h1>
       <button id='laskuri'>Javascript pois päältä. Siirry linkistä!</button>
       <script>
         'use strict';
         const urli = 'http://85.156.34.242:57820';
         let secsLeft = 4;
         
+        let running = true;
+        const counter = window.document.getElementById('laskuri');
+
+        const sleep = ms => new Promise(r => setTimeout(r, ms));
+        const drawCounter = count => counter.textContent = running ? count + " ▶️": count + " ⏸";
+        const toggleOnOff = () => {
+          running = running ? false : true;
+          drawCounter(secsLeft);
+        }
+
+        counter.addEventListener("click", toggleOnOff);
+        
+        document.addEventListener("keydown", event => {
+          if (event.code === "Space")
+            toggleOnOff();
+        });
+
+        window.onload = async () => {
+          while (true) {
+            if (secsLeft > 0 && running)
+              drawCounter(--secsLeft);
+            if (secsLeft == 0)
+              window.location.href = urli;
+
+            await sleep(1 * 1000);
+          }
+        }
       </script>
     </body>
   </html>
