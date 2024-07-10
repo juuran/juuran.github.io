@@ -62,8 +62,8 @@
 
         counter.addEventListener("click", toggleOnOff);
         
-        document.addEventListener("keypress", e => {
-          if (e.code === "Space" || e.key == ' ') {
+        document.addEventListener("keypress", event => {
+          if (event.code === "Space" || event.key == ' ') {
             toggleOnOff;
           }
         });
