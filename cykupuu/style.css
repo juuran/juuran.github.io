@@ -1,0 +1,13 @@
+#cy {
+  width: 90vw;
+  height: 80vh;
+  display: block;
+}
+
+.rajaus {
+  border-style: dashed;
+  margin-top: 5vh;
+  margin-bottom: 15vh;
+  margin-right: 3vw;
+  margin-left: 4vw;
+}
