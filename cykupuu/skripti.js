@@ -142,6 +142,8 @@ Funktiot
 
 function init() {
     document.addEventListener("keydown", nappaimienKuuntelija);
+    document.getElementById("randoButton").addEventListener("click", nappiKuuntelija);
+    document.getElementById("järjestäButton").addEventListener("click", nappiKuuntelija);
 }
 
 function nappaimienKuuntelija(event) {
@@ -164,9 +166,19 @@ function nappaimienKuuntelija(event) {
     }
 }
 
-function luoLayout() {
+function nappiKuuntelija(event) {
+    if (event.currentTarget.id === "randoButton") {
+        luoLeiska("random").run();
+    }
+
+    if (event.currentTarget.id === "järjestäButton") {
+        luoLeiska("breadthfirst").run();
+    }
+}
+
+function luoLeiska(nimi) {
     return cy.layout({
-        name: 'breadthfirst',
+        name: nimi,
 
         fit: true, // whether to fit the viewport to the graph
         directed: true, // whether the tree is directed downwards (or edges can point in any direction if false)
@@ -203,7 +215,7 @@ function luoSukupuulleData(henkilot) {
         suhtehet.add(henkilo.suhteet);
     }
 
-    let iter = suhtehet.entries();
+    let iter = suhtehet.values();
     // luo solmut suhteille
     for (const suhde of iter) {
         let tempSuhdeId = suhde.suhdetyyppi + " (" + suhde.suhdeId + ")"
@@ -253,6 +265,6 @@ Ohjelman suoritus, aka "main"
 window.onload = () => {
     init();
     cy.add(luoSukupuulleData(henkilodata));
-    let breadthfirstLayout = luoLayout();
-    breadthfirstLayout.run();
+    let breadthfirstLeiska = luoLeiska("breadthfirst");
+    breadthfirstLeiska.run();
 }
