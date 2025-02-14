@@ -1,11 +1,12 @@
 body {
   margin: 0px;
   padding: 0px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 #cy {
   width: 90vw;
-  height: 80vh;
+  height: 75vh;
   display: block;
 }
 
@@ -17,6 +18,18 @@ body {
   margin-left: 4vw;
 }
 
-h1, button {
+h1, button, footer {
+  margin: 1vh;
   margin-left: 2vw;
+  margin-right: 2vw;
+}
+
+#statusbar {
+  margin-right: 3vw;
+  margin-left: 2vw;
+  border-style: solid;
+  font-family: monospace;
+  font-size: large;
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
