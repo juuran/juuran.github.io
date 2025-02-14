@@ -179,6 +179,8 @@ function init() {
     document.addEventListener("keydown", nappaimienKuuntelija);
     document.addEventListener("click", valitsimenKuuntelija);
     document.addEventListener("touchstart", valitsimenKuuntelija);
+    document.addEventListener("touchend", valitsimenKuuntelija);
+    document.addEventListener("touchcancel", valitsimenKuuntelija);
     document.getElementById("randoButton").addEventListener("click", nappiKuuntelija);
     document.getElementById("järjestäButton").addEventListener("click", nappiKuuntelija);
     document.getElementById("omaJärjestysButton").addEventListener("click", nappiKuuntelija);
