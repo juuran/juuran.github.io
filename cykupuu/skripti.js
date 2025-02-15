@@ -419,6 +419,8 @@ async function main() {
     init();
     cy.add(luoSukupuunHenkiloData(henkilodata));
     cy.add(luoSukupuunSuhdeData(suhdeData));
+    cy.nodes().on('select', valitsimenKuuntelija);
+    cy.nodes().once('select', valitsimenKuuntelija);
 }
 
 window.onload = async () => {
