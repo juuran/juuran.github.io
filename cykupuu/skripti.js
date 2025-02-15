@@ -177,10 +177,17 @@ function init() {
     breadthfirstLeiska.run();
 
     document.addEventListener("keydown", nappaimienKuuntelija);
-    document.addEventListener("click", valitsimenKuuntelija);
     document.getElementById("randoButton").addEventListener("click", nappiKuuntelija);
     document.getElementById("järjestäButton").addEventListener("click", nappiKuuntelija);
     document.getElementById("omaJärjestysButton").addEventListener("click", nappiKuuntelija);
+    document.addEventListener('mouseup', async () => {
+        await sleep(0.01);
+        valitsimenKuuntelija();
+    });
+    document.addEventListener('touchend', async () => {
+        await sleep(0.15);
+        valitsimenKuuntelija();
+    });
 }
 
 function nappaimienKuuntelija(event) {
@@ -415,10 +422,6 @@ async function main() {
     init();
     cy.add(luoSukupuunHenkiloData(henkilodata));
     cy.add(luoSukupuunSuhdeData(suhdeData));
-    document.addEventListener('touchstart', async () => {
-        await sleep(0.1);
-        valitsimenKuuntelija();
-    });
 }
 
 window.onload = async () => {
