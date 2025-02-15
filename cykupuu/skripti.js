@@ -178,10 +178,6 @@ function init() {
 
     document.addEventListener("keydown", nappaimienKuuntelija);
     document.addEventListener("click", valitsimenKuuntelija);
-    document.addEventListener("touchstart", valitsimenKuuntelija);
-    document.addEventListener("touchmove", valitsimenKuuntelija);
-    document.addEventListener("touchend", valitsimenKuuntelija);
-    document.addEventListener("touchcancel", valitsimenKuuntelija);
     document.getElementById("randoButton").addEventListener("click", nappiKuuntelija);
     document.getElementById("järjestäButton").addEventListener("click", nappiKuuntelija);
     document.getElementById("omaJärjestysButton").addEventListener("click", nappiKuuntelija);
@@ -419,8 +415,10 @@ async function main() {
     init();
     cy.add(luoSukupuunHenkiloData(henkilodata));
     cy.add(luoSukupuunSuhdeData(suhdeData));
-    cy.nodes().on('select', valitsimenKuuntelija);
-    cy.nodes().once('select', valitsimenKuuntelija);
+    document.addEventListener('touchstart', async () => {
+        await sleep(0.1);
+        valitsimenKuuntelija();
+    });
 }
 
 window.onload = async () => {
