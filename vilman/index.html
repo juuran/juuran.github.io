@@ -1,56 +1,56 @@
-  <!doctype html>
-  <html lang='fi'>
+<!doctype html>
+<html lang='fi'>
     <head>
-      <meta charset='utf-8'>
-      <meta name='viewport' content='width=device-width, initial-scale=1'>
-      <meta name='robots' content='noindex'>
-      <title>Vilman kuvat</title>
-          <head>
-      <meta charset='utf-8'>
-      <meta name='viewport' content='width=device-width, initial-scale=1'>
-      <meta name='robots' content='noindex'>
-      <title>Vilman kuvat</title>
-      <style>
-        h1, h2, p, li, button {
-          padding: 1.2rem;
-          font-family: monospace, Courier New;
-          font-size: 1.6rem;
-	        margin: 0;
-        }
-        h2, button {
-          font-size: 1rem;
-          padding-bottom: 0.5rem;
-        }
-        p, ul, li {
-          font-size: 0.8rem;
-          padding-top: 0.3rem;
-          padding-bottom: 0;
-        }
-        span {  display: inline-block;  }
-        button {
-          margin: 1rem;
-          padding: 0.45rem;
-          user-select: none;
-          animation: clicked 0.6s 1 ease-in-out backwards;
-        }
-        button:active {
-          animation: clicked 0.6s 1 ease-in-out forwards;
-        }
-        @keyframes clicked {
-          from { transform: scale(1.00, 1.00); }
-          to   { transform: scale(1.15, 1.15); }
-        }
-      </style>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <meta name='robots' content='noindex'>
+        <title>Vilman kuvat</title>
+            <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <meta name='robots' content='noindex'>
+        <title>Vilman kuvat</title>
+        <style>
+            h1, h2, p, li, button {
+              padding: 1.2rem;
+              font-family: monospace, Courier New;
+              font-size: 1.6rem;
+	            margin: 0;
+            }
+            h2, button {
+              font-size: 1rem;
+              padding-bottom: 0.5rem;
+            }
+            p, ul, li {
+              font-size: 0.8rem;
+              padding-top: 0.3rem;
+              padding-bottom: 0;
+            }
+            span {  display: inline-block;  }
+            button {
+              margin: 1rem;
+              padding: 0.45rem;
+              user-select: none;
+              animation: clicked 0.6s 1 ease-in-out backwards;
+            }
+            button:active {
+              animation: clicked 0.6s 1 ease-in-out forwards;
+            }
+            @keyframes clicked {
+              from { transform: scale(1.00, 1.00); }
+              to   { transform: scale(1.15, 1.15); }
+            }
+        </style>
     </head>
     <body>
-      <br><br><br><br><br>
-      <h1>Siirrytään <a href='https://91.154.184.73:24861' target='_self'><strong>Vilman kuvagalleriaan</strong></a><strong></strong></h1>
-      <button id='laskuri'>Javascript pois päältä. Siirry linkistä!</button>
-      <script>
-        'use strict';
-        const urli = 'https://91.154.184.73:24861';
-        let secsLeft = 4;
-        
+        <br><br><br><br><br>
+        <h1>Siirrytään <a href='https://91.154.184.73:24861' target='_self'><strong>Vilman kuvagalleriaan</strong></a><strong></strong></h1>
+        <button id='laskuri'>Javascript pois päältä. Siirry linkistä!</button>
+        <script>
+            'use strict';
+            const urli = 'https://91.154.184.73:24861';
+            let secsLeft = 4;
+            
         let running = true;
         const counter = window.document.getElementById('laskuri');
 
@@ -78,6 +78,6 @@
             await sleep(1 * 1000);
           }
         }
-      </script>
+        </script>
     </body>
-  </html>
+</html>
