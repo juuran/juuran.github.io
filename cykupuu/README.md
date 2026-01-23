@@ -1,2 +1,0 @@
-# cykupuu
-Sukupuun visualisoiva koodausprojekti.
